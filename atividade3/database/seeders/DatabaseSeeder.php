@@ -9,7 +9,8 @@ use Faker\Factory as FakerFactory;
 
 
 class DatabaseSeeder extends Seeder
-{ public function run()
+{ 
+    public function run()
     {
         FakerFactory::create()->unique(true);
         $this->call([
@@ -17,5 +18,12 @@ class DatabaseSeeder extends Seeder
             AuthorPublisherBookSeeder::class,
         ]);
     }
-
+    public function run()
+    {
+    $this->call([
+        CategorySeeder::class,
+        AuthorPublisherBookSeeder::class,
+        UserBorrowingSeeder::class, // Novo seeder adicionado aqui
+    ]);
+    }
 }
